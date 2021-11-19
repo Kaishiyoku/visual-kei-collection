@@ -35,6 +35,13 @@ return [
             'root' => storage_path('app'),
         ],
 
+        'vk' => [
+            'driver' => 'local',
+            'root' => storage_path('app/vk'),
+            'url' => env('APP_URL').'/vk',
+            'visibility' => 'public',
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
@@ -68,6 +75,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('vk') => storage_path('app/vk'),
     ],
 
 ];

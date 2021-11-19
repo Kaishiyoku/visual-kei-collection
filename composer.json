@@ -5,15 +5,21 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^7.3|^8.0",
+        "php": "^7.4|^8.0",
+        "blade-ui-kit/blade-heroicons": "^1.2",
+        "cjstroud/classnames-php": "^1.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "intervention/image": "^2.7",
         "kaishiyoku/laravel-cli-create-user": "^3.1",
         "laravel/framework": "^8.65",
         "laravel/jetstream": "^2.4",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "livewire/livewire": "^2.5"
+        "livewire/livewire": "^2.5",
+        "scriptfusion/byte-formatter": "^4.0",
+        "spatie/laravel-html": "^3.0",
+        "tioga-tours/php-imgfing": "^0.3.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
@@ -30,7 +36,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
