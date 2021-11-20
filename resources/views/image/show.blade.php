@@ -1,12 +1,16 @@
 <x-app-layout>
     <x-slot name="header">
-        <x-page-header.container>
-            <x-page-header.back-link :href="route('images.index')"/>
+        <x-page-header.flex-container>
+            <x-page-header.container>
+                <x-page-header.back-link :href="route('images.index')"/>
 
-            <x-page-header.headline>
-                {{ __('Image details') }}
-            </x-page-header.headline>
-        </x-page-header.container>
+                <x-page-header.headline>
+                    {{ __('Image details') }}
+                </x-page-header.headline>
+            </x-page-header.container>
+
+            <x-secondary-button-link :href="route('images.create')">{{ __('Add another image') }}</x-secondary-button-link>
+        </x-page-header.flex-container>
     </x-slot>
 
     <x-card.card>
