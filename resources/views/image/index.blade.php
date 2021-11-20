@@ -16,12 +16,10 @@
     @if ($images->isNotEmpty())
         <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             @foreach ($images as $image)
-                <a href="{{ route('images.show', $image) }}" class="group block transition sm:rounded-lg hover:opacity-70">
-                    <x-card.card class="h-full overflow-hidden">
-                        <img src="{{ $image->getFilePath() }}" alt="{{ $image->id }}" class="w-full h-[250px] object-cover transform group-hover:scale-110 transition ease-in-out" loading="lazy"/>
-
+                <a href="{{ route('images.show', $image) }}" class="group block w-full h-[250px] transition sm:rounded-lg hover:opacity-70 overflow-hidden">
+                    <x-card.card class="h-full overflow-hidden bg-cover transform hover:scale-110 transition ease-in-out" style="background-image: url('{{ $image->getFilePath() }}')">
                         @if ($image->artists->isNotEmpty())
-                            <x-card.body class="mt-2">
+                            <x-card.body class="absolute bottom-0">
                                 @include('image._artists')
                             </x-card.body>
                         @endif
