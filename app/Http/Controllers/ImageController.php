@@ -92,6 +92,8 @@ class ImageController extends Controller
     public function update(UpdateImageRequest $request, Image $image)
     {
         if ($request->hasFile('image')) {
+            PossibleDuplicateController::deletePossibleDuplicatesForImage($image);
+
             $savedImage = static::saveAndUploadImage($request->validated(), $request->file('image'), $image);
         } else {
             $image->update($request->validated());
@@ -143,6 +145,8 @@ class ImageController extends Controller
 
     public static function deleteImage(Image $image)
     {
+        PossibleDuplicateController::deletePossibleDuplicatesForImage($image);
+
         Storage::disk('vk')->delete($image->getFileName());
 
         $image->delete();

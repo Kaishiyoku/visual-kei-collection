@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\PossibleDuplicateController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,10 +25,12 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::resource('images', ImageController::class);
-
     // admin routes
     Route::group(['middleware' => ['administrate']], function () {
+        Route::resource('images', ImageController::class);
 
+        Route::put('/possible_duplicates/{possibleDuplicate}/ignore', [PossibleDuplicateController::class, 'ignore'])->name('possible_duplicates.ignore');
+        Route::put('/possible_duplicates/{possibleDuplicate}/{image}', [PossibleDuplicateController::class, 'keepImage'])->name('possible_duplicates.keep_image');
+        Route::resource('possible_duplicates', PossibleDuplicateController::class)->only(['index', 'show', 'destroy']);
     });
 });

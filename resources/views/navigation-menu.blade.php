@@ -19,6 +19,10 @@
                     <x-jet-nav-link href="{{ route('images.index') }}" :active="request()->routeIs('images.*')">
                         {{ __('Images') }}
                     </x-jet-nav-link>
+
+                    <x-jet-nav-link href="{{ route('possible_duplicates.index') }}" :active="request()->routeIs('possible_duplicates.*')">
+                        {{ __('Possible duplicates') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 
@@ -148,6 +152,10 @@
 
             <x-jet-responsive-nav-link href="{{ route('images.index') }}" :active="request()->routeIs('images.*')">
                 {{ __('Images') }}
+            </x-jet-responsive-nav-link>
+
+            <x-jet-responsive-nav-link href="{{ route('possible_duplicates.index') }}" :active="request()->routeIs('possible_duplicates.*')">
+                {{ __('Possible duplicates') }}
             </x-jet-responsive-nav-link>
         </div>
 
