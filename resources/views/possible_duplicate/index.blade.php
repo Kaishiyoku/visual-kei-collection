@@ -6,7 +6,7 @@
             </x-page-header.headline>
         </x-page-header.container>
 
-        <div>{{ trans_choice('possible_duplicate.total_number_of_possible_duplicates', $totalImageCount) }}</div>
+        <div>{{ trans_choice('possible_duplicate.total_number_of_possible_duplicates', $possibleDuplicates->total()) }}</div>
     </x-slot>
 
     @if ($possibleDuplicates->isNotEmpty())

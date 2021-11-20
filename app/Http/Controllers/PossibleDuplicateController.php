@@ -15,7 +15,6 @@ class PossibleDuplicateController extends Controller
     public function index()
     {
         return view('possible_duplicate.index', [
-            'totalImageCount' => Image::count(),
             'possibleDuplicates' => PossibleDuplicate::where('is_false_positive', false)->orderBy('created_at', 'desc')->paginate(),
         ]);
     }
