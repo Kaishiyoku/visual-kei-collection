@@ -90,6 +90,11 @@ class Image extends Model
         return Storage::disk('vk')->url($this->getFileName());
     }
 
+    public function getThumbnailFilePath(): string
+    {
+        return Storage::disk('vk')->url("thumbnails/{$this->id}.jpg");
+    }
+
     public function getImageFromStorage(): ?\Intervention\Image\Image
     {
         if (!$this->mimetype) {
