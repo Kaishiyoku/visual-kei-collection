@@ -55,7 +55,7 @@ class CheckForDuplicateImages extends Command
                     return;
                 }
 
-                if (ImgFing::matchScore($imageAsc->identifier, $imageDesc->identifier) > config('astolfo.duplicate_checker_threshold')) {
+                if (ImgFing::matchScore($imageAsc->identifier, $imageDesc->identifier) > config('visual_kei.duplicate_checker_threshold')) {
                     $alreadyInsertedPossibleDuplicateCount = PossibleDuplicate::query()
                         ->where('image_id_left', $imageDesc->id)
                         ->where('image_id_right', $imageAsc->id)
