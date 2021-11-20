@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreImageRequest;
 use App\Http\Requests\UpdateImageRequest;
+use App\Models\Artist;
 use App\Models\Image;
+use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use ImgFing;
@@ -32,6 +34,8 @@ class ImageController extends Controller
     {
         return view('image.create', [
             'image' => new Image(),
+            'artistNames' => collect(),
+            'availableArtists' => getArtistNamesForTagInput(),
         ]);
     }
 
@@ -44,6 +48,8 @@ class ImageController extends Controller
     public function store(StoreImageRequest $request)
     {
         $image = static::saveAndUploadImage($request->validated(), $request->file('image'));
+
+        static::syncArtists($request, $image);
 
         return redirect()->route('images.show', $image);
     }
@@ -71,6 +77,8 @@ class ImageController extends Controller
     {
         return view('image.edit', [
             'image' => $image,
+            'artistNames' => $image->artists()->pluck('name'),
+            'availableArtists' => getArtistNamesForTagInput(),
         ]);
     }
 
@@ -89,6 +97,8 @@ class ImageController extends Controller
             $image->update($request->validated());
             $savedImage = $image;
         }
+
+        static::syncArtists($request, $savedImage);
 
         return redirect()->route('images.show', $savedImage);
     }
@@ -136,5 +146,18 @@ class ImageController extends Controller
         Storage::disk('vk')->delete($image->getFileName());
 
         $image->delete();
+    }
+
+    private static function syncArtists(Request $request, Image $image): void
+    {
+        $artistNames = collect(empty($request->get('artists')) ? [] : $request->get('artists'));
+
+        $artistIds = $artistNames->map(function (string $artistName) {
+            $artist = Artist::firstOrCreate(['name' => $artistName]);
+
+            return $artist->id;
+        });
+
+        $image->artists()->sync($artistIds);
     }
 }

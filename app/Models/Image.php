@@ -37,6 +37,8 @@ use Storage;
  * @mixin \Eloquent
  * @property string $mimetype
  * @method static \Illuminate\Database\Eloquent\Builder|Image whereMimetype($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Artist[] $artists
+ * @property-read int|null $artists_count
  */
 class Image extends Model
 {
@@ -72,6 +74,11 @@ class Image extends Model
      * @var int
      */
     protected $perPage = 24;
+
+    public function artists()
+    {
+        return $this->belongsToMany(Artist::class);
+    }
 
     public function getFileName(): string
     {

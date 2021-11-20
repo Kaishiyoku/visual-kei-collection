@@ -24,6 +24,7 @@ class StoreImageRequest extends FormRequest
     public function rules()
     {
         return [
+            'physicians' => ['nullable', 'array'],
             'source' => ['nullable', 'string:255'],
             'image' => ['image', 'mimetypes:image/jpeg,image/png,image/gif', 'max:10000'],
         ];

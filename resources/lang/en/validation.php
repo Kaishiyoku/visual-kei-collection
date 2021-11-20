@@ -156,6 +156,7 @@ return [
     'attributes' => [
         'source' => 'Source',
         'image' => 'Image',
+        'artists' => 'Artists',
     ],
 
 ];
