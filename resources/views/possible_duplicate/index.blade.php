@@ -1,7 +1,9 @@
 <x-app-layout>
     <x-slot name="header">
         <x-page-header.container>
-            {{ __('Possible duplicates') }}
+            <x-page-header.headline>
+                {{ __('Possible duplicates') }}
+            </x-page-header.headline>
         </x-page-header.container>
 
         <div>{{ trans_choice('possible_duplicate.total_number_of_possible_duplicates', $totalImageCount) }}</div>
