@@ -176,7 +176,9 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
-
+        App\Providers\ImageManagerServiceProvider::class,
+        App\Providers\ImgFingServiceProvider::class,
+        App\Providers\ByteFormatterServiceProvider::class,
     ],
 
     /*
@@ -231,6 +233,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        // custom aliases
+        'ImageManager' => App\Facades\ImageManagerFacade::class,
+        'ImgFing' => App\Facades\ImgFingFacade::class,
+        'ByteFormatter' => App\Facades\ByteFormatterFacade::class,
 
     ],
 

@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 8.70.2.
+ * Generated for Laravel 8.73.0.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -2260,6 +2260,16 @@
         {
                         return \Illuminate\Auth\SessionGuard::hasMacro($name);
         }
+                    /**
+         * Flush the existing macros.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function flushMacros()
+        {
+                        \Illuminate\Auth\SessionGuard::flushMacros();
+        }
          
     }
             /**
@@ -3583,7 +3593,7 @@
          * Get an item from the cache, or execute the given Closure and store the result.
          *
          * @param string $key
-         * @param \DateTimeInterface|\DateInterval|int|null $ttl
+         * @param \Closure|\DateTimeInterface|\DateInterval|int|null $ttl
          * @param \Closure $callback
          * @return mixed 
          * @static 
@@ -3839,6 +3849,16 @@
         public static function hasMacro($name)
         {
                         return \Illuminate\Cache\Repository::hasMacro($name);
+        }
+                    /**
+         * Flush the existing macros.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function flushMacros()
+        {
+                        \Illuminate\Cache\Repository::flushMacros();
         }
                     /**
          * Dynamically handle calls to the class.
@@ -4268,6 +4288,16 @@
         public static function hasMacro($name)
         {
                         return \Illuminate\Cookie\CookieJar::hasMacro($name);
+        }
+                    /**
+         * Flush the existing macros.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function flushMacros()
+        {
+                        \Illuminate\Cookie\CookieJar::flushMacros();
         }
          
     }
@@ -5770,6 +5800,16 @@
                         return \Illuminate\Events\Dispatcher::hasMacro($name);
         }
                     /**
+         * Flush the existing macros.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function flushMacros()
+        {
+                        \Illuminate\Events\Dispatcher::flushMacros();
+        }
+                    /**
          * Assert if an event has a listener attached to it.
          *
          * @param string $expectedEvent
@@ -6452,6 +6492,16 @@
         public static function hasMacro($name)
         {
                         return \Illuminate\Filesystem\Filesystem::hasMacro($name);
+        }
+                    /**
+         * Flush the existing macros.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function flushMacros()
+        {
+                        \Illuminate\Filesystem\Filesystem::flushMacros();
         }
          
     }
@@ -7151,6 +7201,16 @@
                         return \Illuminate\Http\Client\Factory::hasMacro($name);
         }
                     /**
+         * Flush the existing macros.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function flushMacros()
+        {
+                        \Illuminate\Http\Client\Factory::flushMacros();
+        }
+                    /**
          * Dynamically handle calls to the class.
          *
          * @param string $method
@@ -7457,6 +7517,16 @@
         public static function hasMacro($name)
         {
                         return \Illuminate\Translation\Translator::hasMacro($name);
+        }
+                    /**
+         * Flush the existing macros.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function flushMacros()
+        {
+                        \Illuminate\Translation\Translator::flushMacros();
         }
          
     }
@@ -8397,6 +8467,16 @@
         public static function hasMacro($name)
         {
                         return \Illuminate\Support\Testing\Fakes\NotificationFake::hasMacro($name);
+        }
+                    /**
+         * Flush the existing macros.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function flushMacros()
+        {
+                        \Illuminate\Support\Testing\Fakes\NotificationFake::flushMacros();
         }
          
     }
@@ -9354,6 +9434,16 @@
         public static function hasMacro($name)
         {
                         return \Illuminate\Routing\Redirector::hasMacro($name);
+        }
+                    /**
+         * Flush the existing macros.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function flushMacros()
+        {
+                        \Illuminate\Routing\Redirector::flushMacros();
         }
          
     }
@@ -11355,6 +11445,16 @@
                         return \Illuminate\Http\Request::hasMacro($name);
         }
                     /**
+         * Flush the existing macros.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function flushMacros()
+        {
+                        \Illuminate\Http\Request::flushMacros();
+        }
+                    /**
          * 
          *
          * @see \Illuminate\Foundation\Providers\FoundationServiceProvider::registerRequestValidation()
@@ -11648,6 +11748,16 @@
         public static function hasMacro($name)
         {
                         return \Illuminate\Routing\ResponseFactory::hasMacro($name);
+        }
+                    /**
+         * Flush the existing macros.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function flushMacros()
+        {
+                        \Illuminate\Routing\ResponseFactory::flushMacros();
         }
          
     }
@@ -12509,6 +12619,16 @@
         public static function hasMacro($name)
         {
                         return \Illuminate\Routing\Router::hasMacro($name);
+        }
+                    /**
+         * Flush the existing macros.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function flushMacros()
+        {
+                        \Illuminate\Routing\Router::flushMacros();
         }
                     /**
          * Dynamically handle calls to the class.
@@ -14170,6 +14290,16 @@
                         return \Illuminate\Filesystem\FilesystemAdapter::hasMacro($name);
         }
                     /**
+         * Flush the existing macros.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function flushMacros()
+        {
+                        \Illuminate\Filesystem\FilesystemAdapter::flushMacros();
+        }
+                    /**
          * Dynamically handle calls to the class.
          *
          * @param string $method
@@ -14668,6 +14798,16 @@
         public static function hasMacro($name)
         {
                         return \Illuminate\Routing\UrlGenerator::hasMacro($name);
+        }
+                    /**
+         * Flush the existing macros.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function flushMacros()
+        {
+                        \Illuminate\Routing\UrlGenerator::flushMacros();
         }
          
     }
@@ -15269,6 +15409,16 @@
                         return \Illuminate\View\Factory::hasMacro($name);
         }
                     /**
+         * Flush the existing macros.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function flushMacros()
+        {
+                        \Illuminate\View\Factory::flushMacros();
+        }
+                    /**
          * Start a component rendering process.
          *
          * @param \Illuminate\Contracts\View\View|\Illuminate\Contracts\Support\Htmlable|\Closure|string $view
@@ -15750,7 +15900,312 @@
      
 }
 
-        namespace Barryvdh\Debugbar { 
+        namespace App\Facades { 
+            /**
+     * 
+     *
+     */ 
+        class ImageManagerFacade {
+                    /**
+         * Overrides configuration settings
+         *
+         * @param array $config
+         * @return self 
+         * @static 
+         */ 
+        public static function configure($config = [])
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->configure($config);
+        }
+                    /**
+         * Initiates an Image instance from different input types
+         *
+         * @param mixed $data
+         * @return \Intervention\Image\Image 
+         * @static 
+         */ 
+        public static function make($data)
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->make($data);
+        }
+                    /**
+         * Creates an empty image canvas
+         *
+         * @param int $width
+         * @param int $height
+         * @param mixed $background
+         * @return \Intervention\Image\Image 
+         * @static 
+         */ 
+        public static function canvas($width, $height, $background = null)
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->canvas($width, $height, $background);
+        }
+                    /**
+         * Create new cached image and run callback
+         * (requires additional package intervention/imagecache)
+         *
+         * @param \Closure $callback
+         * @param int $lifetime
+         * @param boolean $returnObj
+         * @return \Image 
+         * @static 
+         */ 
+        public static function cache($callback, $lifetime = null, $returnObj = false)
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->cache($callback, $lifetime, $returnObj);
+        }
+         
+    }
+            /**
+     * 
+     *
+     */ 
+        class ImgFingFacade {
+                    /**
+         * 
+         *
+         * @throws \Exception
+         * @static 
+         */ 
+        public static function identifyFile($path)
+        {
+                        /** @var \ImgFing\ImgFing $instance */
+                        return $instance->identifyFile($path);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function createIdentityImageFromString($imgString)
+        {
+                        /** @var \ImgFing\ImgFing $instance */
+                        return $instance->createIdentityImageFromString($imgString);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function identifyString($imgString)
+        {
+                        /** @var \ImgFing\ImgFing $instance */
+                        return $instance->identifyString($imgString);
+        }
+                    /**
+         * 
+         *
+         * @throws \Exception
+         * @static 
+         */ 
+        public static function matchScore($str1, $str2)
+        {
+                        /** @var \ImgFing\ImgFing $instance */
+                        return $instance->matchScore($str1, $str2);
+        }
+         
+    }
+            /**
+     * 
+     *
+     */ 
+        class ByteFormatterFacade {
+                    /**
+         * Formats the specified number of bytes as a human-readable string.
+         *
+         * @param int|float $bytes Number of bytes.
+         * @param int|null $precision Optional. Number of fractional digits.
+         * @return string Formatted bytes.
+         * @static 
+         */ 
+        public static function format($bytes, $precision = null)
+        {
+                        /** @var \ScriptFUSION\Byte\ByteFormatter $instance */
+                        return $instance->format($bytes, $precision);
+        }
+                    /**
+         * Gets the exponentiation base.
+         *
+         * @return int Exponentiation base.
+         * @static 
+         */ 
+        public static function getBase()
+        {
+                        /** @var \ScriptFUSION\Byte\ByteFormatter $instance */
+                        return $instance->getBase();
+        }
+                    /**
+         * Sets the exponentiation base which should usually be a Base constant.
+         *
+         * @param int $base Exponentiation base.
+         * @return \ScriptFUSION\Byte\ByteFormatter 
+         * @static 
+         */ 
+        public static function setBase($base)
+        {
+                        /** @var \ScriptFUSION\Byte\ByteFormatter $instance */
+                        return $instance->setBase($base);
+        }
+                    /**
+         * Gets the format specifier.
+         *
+         * @return string Format specifier.
+         * @static 
+         */ 
+        public static function getFormat()
+        {
+                        /** @var \ScriptFUSION\Byte\ByteFormatter $instance */
+                        return $instance->getFormat();
+        }
+                    /**
+         * Sets the format specifier. Occurrences of %v and %u will be replaced
+         * with formatted byte values and units, respectively.
+         *
+         * @param string $format Format specifier.
+         * @return \ScriptFUSION\Byte\ByteFormatter 
+         * @static 
+         */ 
+        public static function setFormat($format)
+        {
+                        /** @var \ScriptFUSION\Byte\ByteFormatter $instance */
+                        return $instance->setFormat($format);
+        }
+                    /**
+         * Gets the maximum number of fractional digits.
+         *
+         * @return int Fractional digits.
+         * @static 
+         */ 
+        public static function getPrecision()
+        {
+                        /** @var \ScriptFUSION\Byte\ByteFormatter $instance */
+                        return $instance->getPrecision();
+        }
+                    /**
+         * Sets the maximum number of fractional digits.
+         *
+         * @param int $precision
+         * @return \ScriptFUSION\Byte\ByteFormatter 
+         * @static 
+         */ 
+        public static function setPrecision($precision)
+        {
+                        /** @var \ScriptFUSION\Byte\ByteFormatter $instance */
+                        return $instance->setPrecision($precision);
+        }
+                    /**
+         * Enables automatic precision scaling.
+         *
+         * @return \ScriptFUSION\Byte\ByteFormatter 
+         * @static 
+         */ 
+        public static function enableAutomaticPrecision()
+        {
+                        /** @var \ScriptFUSION\Byte\ByteFormatter $instance */
+                        return $instance->enableAutomaticPrecision();
+        }
+                    /**
+         * Disables automatic precision scaling.
+         *
+         * @return \ScriptFUSION\Byte\ByteFormatter 
+         * @static 
+         */ 
+        public static function disableAutomaticPrecision()
+        {
+                        /** @var \ScriptFUSION\Byte\ByteFormatter $instance */
+                        return $instance->disableAutomaticPrecision();
+        }
+                    /**
+         * Gets a value indicating whether precision will be scaled automatically.
+         *
+         * @return bool True if precision will be scaled automatically, otherwise
+         *     false.
+         * @static 
+         */ 
+        public static function hasAutomaticPrecision()
+        {
+                        /** @var \ScriptFUSION\Byte\ByteFormatter $instance */
+                        return $instance->hasAutomaticPrecision();
+        }
+                    /**
+         * Gets the fixed exponent.
+         *
+         * @return int Fixed exponent.
+         * @static 
+         */ 
+        public static function getFixedExponent()
+        {
+                        /** @var \ScriptFUSION\Byte\ByteFormatter $instance */
+                        return $instance->getFixedExponent();
+        }
+                    /**
+         * Sets the fixed exponent.
+         *
+         * @param int $exponent Fixed exponent.
+         * @return \ScriptFUSION\Byte\ByteFormatter 
+         * @static 
+         */ 
+        public static function setFixedExponent($exponent)
+        {
+                        /** @var \ScriptFUSION\Byte\ByteFormatter $instance */
+                        return $instance->setFixedExponent($exponent);
+        }
+                    /**
+         * Clears any fixed exponent.
+         *
+         * @return \ScriptFUSION\Byte\ByteFormatter 
+         * @static 
+         */ 
+        public static function clearFixedExponent()
+        {
+                        /** @var \ScriptFUSION\Byte\ByteFormatter $instance */
+                        return $instance->clearFixedExponent();
+        }
+                    /**
+         * Gets a value indicating whether a fixed exponent has been set.
+         *
+         * @return bool True if a fixed exponent has been set, otherwise false.
+         * @static 
+         */ 
+        public static function hasFixedExponent()
+        {
+                        /** @var \ScriptFUSION\Byte\ByteFormatter $instance */
+                        return $instance->hasFixedExponent();
+        }
+                    /**
+         * Gets the unit decorator.
+         *
+         * @return \ScriptFUSION\Byte\Unit\UnitDecorator 
+         * @static 
+         */ 
+        public static function getUnitDecorator()
+        {
+                        /** @var \ScriptFUSION\Byte\ByteFormatter $instance */
+                        return $instance->getUnitDecorator();
+        }
+                    /**
+         * Sets the unit decorator.
+         *
+         * @param \ScriptFUSION\Byte\Unit\UnitDecorator $decorator Unit decorator.
+         * @return \ScriptFUSION\Byte\ByteFormatter 
+         * @static 
+         */ 
+        public static function setUnitDecorator($decorator)
+        {
+                        /** @var \ScriptFUSION\Byte\ByteFormatter $instance */
+                        return $instance->setUnitDecorator($decorator);
+        }
+         
+    }
+     
+}
+
+    namespace Barryvdh\Debugbar { 
             /**
      * 
      *
@@ -16573,6 +17028,70 @@
         {
                         /** @var \Facade\FlareClient\Flare $instance */
                         return $instance->group($groupName, $properties);
+        }
+         
+    }
+     
+}
+
+    namespace Intervention\Image\Facades { 
+            /**
+     * 
+     *
+     */ 
+        class Image {
+                    /**
+         * Overrides configuration settings
+         *
+         * @param array $config
+         * @return self 
+         * @static 
+         */ 
+        public static function configure($config = [])
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->configure($config);
+        }
+                    /**
+         * Initiates an Image instance from different input types
+         *
+         * @param mixed $data
+         * @return \Intervention\Image\Image 
+         * @static 
+         */ 
+        public static function make($data)
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->make($data);
+        }
+                    /**
+         * Creates an empty image canvas
+         *
+         * @param int $width
+         * @param int $height
+         * @param mixed $background
+         * @return \Intervention\Image\Image 
+         * @static 
+         */ 
+        public static function canvas($width, $height, $background = null)
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->canvas($width, $height, $background);
+        }
+                    /**
+         * Create new cached image and run callback
+         * (requires additional package intervention/imagecache)
+         *
+         * @param \Closure $callback
+         * @param int $lifetime
+         * @param boolean $returnObj
+         * @return \Image 
+         * @static 
+         */ 
+        public static function cache($callback, $lifetime = null, $returnObj = false)
+        {
+                        /** @var \Intervention\Image\ImageManager $instance */
+                        return $instance->cache($callback, $lifetime, $returnObj);
         }
          
     }
@@ -17441,6 +17960,570 @@
         {
                         /** @var \Livewire\LivewireManager $instance */
                         return $instance->flushState();
+        }
+         
+    }
+     
+}
+
+    namespace Spatie\Html\Facades { 
+            /**
+     * 
+     *
+     */ 
+        class Html {
+                    /**
+         * 
+         *
+         * @param string|null $href
+         * @param string|null $text
+         * @return \Spatie\Html\Elements\A 
+         * @static 
+         */ 
+        public static function a($href = null, $contents = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->a($href, $contents);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $href
+         * @param string|null $text
+         * @return \Spatie\Html\Elements\I 
+         * @static 
+         */ 
+        public static function i($contents = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->i($contents);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $type
+         * @param string|null $text
+         * @return \Spatie\Html\Elements\Button 
+         * @static 
+         */ 
+        public static function button($contents = null, $type = null, $name = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->button($contents, $type, $name);
+        }
+                    /**
+         * 
+         *
+         * @param \Illuminate\Support\Collection|\Spatie\Html\iterable|string $classes
+         * @return \Illuminate\Contracts\Support\Htmlable 
+         * @static 
+         */ 
+        public static function class($classes)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->class($classes);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $name
+         * @param bool $checked
+         * @param string|null $value
+         * @return \Spatie\Html\Elements\Input 
+         * @static 
+         */ 
+        public static function checkbox($name = null, $checked = null, $value = '1')
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->checkbox($name, $checked, $value);
+        }
+                    /**
+         * 
+         *
+         * @param \Spatie\Html\HtmlElement|string|null $contents
+         * @return \Spatie\Html\Elements\Div 
+         * @static 
+         */ 
+        public static function div($contents = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->div($contents);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $name
+         * @param string|null $value
+         * @return \Spatie\Html\Elements\Input 
+         * @static 
+         */ 
+        public static function email($name = null, $value = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->email($name, $value);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $name
+         * @param string|null $value
+         * @param bool $format
+         * @return \Spatie\Html\Elements\Input 
+         * @static 
+         */ 
+        public static function date($name = '', $value = null, $format = true)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->date($name, $value, $format);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $name
+         * @param string|null $value
+         * @param bool $format
+         * @return \Spatie\Html\Elements\Input 
+         * @static 
+         */ 
+        public static function datetime($name = '', $value = null, $format = true)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->datetime($name, $value, $format);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $name
+         * @param string|null $value
+         * @param string|null $min
+         * @param string|null $max
+         * @param string|null $step
+         * @return \Spatie\Html\Elements\Input 
+         * @static 
+         */ 
+        public static function range($name = '', $value = '', $min = null, $max = null, $step = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->range($name, $value, $min, $max, $step);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $name
+         * @param string|null $value
+         * @param bool $format
+         * @return \Spatie\Html\Elements\Input 
+         * @static 
+         */ 
+        public static function time($name = '', $value = null, $format = true)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->time($name, $value, $format);
+        }
+                    /**
+         * 
+         *
+         * @param string $tag
+         * @return \Spatie\Html\Elements\Element 
+         * @static 
+         */ 
+        public static function element($tag)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->element($tag);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $type
+         * @param string|null $name
+         * @param string|null $value
+         * @return \Spatie\Html\Elements\Input 
+         * @static 
+         */ 
+        public static function input($type = null, $name = null, $value = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->input($type, $name, $value);
+        }
+                    /**
+         * 
+         *
+         * @param \Spatie\Html\HtmlElement|string|null $legend
+         * @return \Spatie\Html\Elements\Fieldset 
+         * @static 
+         */ 
+        public static function fieldset($legend = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->fieldset($legend);
+        }
+                    /**
+         * 
+         *
+         * @param string $method
+         * @param string|null $action
+         * @return \Spatie\Html\Elements\Form 
+         * @static 
+         */ 
+        public static function form($method = 'POST', $action = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->form($method, $action);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $name
+         * @param string|null $value
+         * @return \Spatie\Html\Elements\Input 
+         * @static 
+         */ 
+        public static function hidden($name = null, $value = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->hidden($name, $value);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $src
+         * @param string|null $alt
+         * @return \Spatie\Html\Elements\Img 
+         * @static 
+         */ 
+        public static function img($src = null, $alt = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->img($src, $alt);
+        }
+                    /**
+         * 
+         *
+         * @param \Spatie\Html\HtmlElement|\Spatie\Html\iterable|string|null $contents
+         * @param string|null $for
+         * @return \Spatie\Html\Elements\Label 
+         * @static 
+         */ 
+        public static function label($contents = null, $for = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->label($contents, $for);
+        }
+                    /**
+         * 
+         *
+         * @param \Spatie\Html\HtmlElement|string|null $contents
+         * @return \Spatie\Html\Elements\Legend 
+         * @static 
+         */ 
+        public static function legend($contents = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->legend($contents);
+        }
+                    /**
+         * 
+         *
+         * @param string $email
+         * @param string|null $text
+         * @return \Spatie\Html\Elements\A 
+         * @static 
+         */ 
+        public static function mailto($email, $text = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->mailto($email, $text);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $name
+         * @param \Spatie\Html\iterable $options
+         * @param string|\Spatie\Html\iterable|null $value
+         * @return \Spatie\Html\Elements\Select 
+         * @static 
+         */ 
+        public static function multiselect($name = null, $options = [], $value = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->multiselect($name, $options, $value);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $name
+         * @param string|null $value
+         * @param string|null $min
+         * @param string|null $max
+         * @param string|null $step
+         * @return \Spatie\Html\Elements\Input 
+         * @static 
+         */ 
+        public static function number($name = null, $value = null, $min = null, $max = null, $step = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->number($name, $value, $min, $max, $step);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $text
+         * @param string|null $value
+         * @param bool $selected
+         * @return \Spatie\Html\Elements\Option 
+         * @static 
+         */ 
+        public static function option($text = null, $value = null, $selected = false)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->option($text, $value, $selected);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $value
+         * @return \Spatie\Html\Elements\Input 
+         * @static 
+         */ 
+        public static function password($name = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->password($name);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $name
+         * @param bool $checked
+         * @param string|null $value
+         * @return \Spatie\Html\Elements\Input 
+         * @static 
+         */ 
+        public static function radio($name = null, $checked = null, $value = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->radio($name, $checked, $value);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $name
+         * @param \Spatie\Html\iterable $options
+         * @param string|\Spatie\Html\iterable|null $value
+         * @return \Spatie\Html\Elements\Select 
+         * @static 
+         */ 
+        public static function select($name = null, $options = [], $value = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->select($name, $options, $value);
+        }
+                    /**
+         * 
+         *
+         * @param \Spatie\Html\HtmlElement|string|null $contents
+         * @return \Spatie\Html\Elements\Span 
+         * @static 
+         */ 
+        public static function span($contents = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->span($contents);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $text
+         * @return \Spatie\Html\Elements\Button 
+         * @static 
+         */ 
+        public static function submit($text = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->submit($text);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $text
+         * @return \Spatie\Html\Elements\Button 
+         * @static 
+         */ 
+        public static function reset($text = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->reset($text);
+        }
+                    /**
+         * 
+         *
+         * @param string $number
+         * @param string|null $text
+         * @return \Spatie\Html\Elements\A 
+         * @static 
+         */ 
+        public static function tel($number, $text = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->tel($number, $text);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $name
+         * @param string|null $value
+         * @return \Spatie\Html\Elements\Input 
+         * @static 
+         */ 
+        public static function text($name = null, $value = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->text($name, $value);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $name
+         * @return \Spatie\Html\Elements\File 
+         * @static 
+         */ 
+        public static function file($name = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->file($name);
+        }
+                    /**
+         * 
+         *
+         * @param string|null $name
+         * @param string|null $value
+         * @return \Spatie\Html\Elements\Textarea 
+         * @static 
+         */ 
+        public static function textarea($name = null, $value = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->textarea($name, $value);
+        }
+                    /**
+         * 
+         *
+         * @return \Spatie\Html\Elements\Input 
+         * @static 
+         */ 
+        public static function token()
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->token();
+        }
+                    /**
+         * 
+         *
+         * @param \ArrayAccess|array $model
+         * @return \Spatie\Html\Html 
+         * @static 
+         */ 
+        public static function model($model)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->model($model);
+        }
+                    /**
+         * 
+         *
+         * @param \ArrayAccess|array $model
+         * @param string|null $method
+         * @param string|null $action
+         * @return \Spatie\Html\Elements\Form 
+         * @static 
+         */ 
+        public static function modelForm($model, $method = 'POST', $action = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->modelForm($model, $method, $action);
+        }
+                    /**
+         * 
+         *
+         * @return \Spatie\Html\Html 
+         * @static 
+         */ 
+        public static function endModel()
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->endModel();
+        }
+                    /**
+         * 
+         *
+         * @return \Illuminate\Contracts\Support\Htmlable 
+         * @static 
+         */ 
+        public static function closeModelForm()
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->closeModelForm();
+        }
+                    /**
+         * Retrieve the value from the current session or assigned model. This is
+         * a public alias for `old`.
+         *
+         * @param string $name
+         * @param mixed $value
+         * @return mixed 
+         * @static 
+         */ 
+        public static function value($name, $default = null)
+        {
+                        /** @var \Spatie\Html\Html $instance */
+                        return $instance->value($name, $default);
+        }
+                    /**
+         * Register a custom macro.
+         *
+         * @param string $name
+         * @param object|callable $macro
+         * @return void 
+         * @static 
+         */ 
+        public static function macro($name, $macro)
+        {
+                        \Spatie\Html\Html::macro($name, $macro);
+        }
+                    /**
+         * Mix another object into the class.
+         *
+         * @param object $mixin
+         * @param bool $replace
+         * @return void 
+         * @throws \ReflectionException
+         * @static 
+         */ 
+        public static function mixin($mixin, $replace = true)
+        {
+                        \Spatie\Html\Html::mixin($mixin, $replace);
+        }
+                    /**
+         * Checks if macro is registered.
+         *
+         * @param string $name
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasMacro($name)
+        {
+                        return \Spatie\Html\Html::hasMacro($name);
+        }
+                    /**
+         * Flush the existing macros.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function flushMacros()
+        {
+                        \Spatie\Html\Html::flushMacros();
         }
          
     }
@@ -18802,7 +19885,7 @@ namespace  {
              * @param string $relationship
              * @param string $boolean
              * @return \Illuminate\Database\Eloquent\Builder|static 
-             * @throws \Exception
+             * @throws \RuntimeException
              * @static 
              */ 
             public static function whereBelongsTo($related, $relationshipName = null, $boolean = 'and')
@@ -18817,7 +19900,7 @@ namespace  {
              * @param \Illuminate\Database\Eloquent\Model $related
              * @param string $relationship
              * @return \Illuminate\Database\Eloquent\Builder|static 
-             * @throws \Exception
+             * @throws \RuntimeException
              * @static 
              */ 
             public static function orWhereBelongsTo($related, $relationshipName = null)
@@ -19051,6 +20134,22 @@ namespace  {
             {
                                 /** @var \Illuminate\Database\Eloquent\Builder $instance */
                                 return $instance->lazyById($chunkSize, $column, $alias);
+            }
+             
+                /**
+             * Query lazily, by chunking the results of a query by comparing IDs in descending order.
+             *
+             * @param int $count
+             * @param string|null $column
+             * @param string|null $alias
+             * @return \Illuminate\Support\LazyCollection 
+             * @throws \InvalidArgumentException
+             * @static 
+             */ 
+            public static function lazyByIdDesc($chunkSize = 1000, $column = null, $alias = null)
+            {
+                                /** @var \Illuminate\Database\Eloquent\Builder $instance */
+                                return $instance->lazyByIdDesc($chunkSize, $column, $alias);
             }
              
                 /**
@@ -21066,6 +22165,17 @@ namespace  {
             }
              
                 /**
+             * Flush the existing macros.
+             *
+             * @return void 
+             * @static 
+             */ 
+            public static function flushMacros()
+            {
+                                \Illuminate\Database\Query\Builder::flushMacros();
+            }
+             
+                /**
              * Dynamically handle calls to the class.
              *
              * @param string $method
@@ -21104,10 +22214,15 @@ namespace  {
             class URL extends \Illuminate\Support\Facades\URL {}
             class Validator extends \Illuminate\Support\Facades\Validator {}
             class View extends \Illuminate\Support\Facades\View {}
+            class ImageManager extends \App\Facades\ImageManagerFacade {}
+            class ImgFing extends \App\Facades\ImgFingFacade {}
+            class ByteFormatter extends \App\Facades\ByteFormatterFacade {}
             class Debugbar extends \Barryvdh\Debugbar\Facade {}
             class Flare extends \Facade\Ignition\Facades\Flare {}
+            class Image extends \Intervention\Image\Facades\Image {}
             class Agent extends \Jenssegers\Agent\Facades\Agent {}
             class Livewire extends \Livewire\Livewire {}
+            class Html extends \Spatie\Html\Facades\Html {}
      
 }
 

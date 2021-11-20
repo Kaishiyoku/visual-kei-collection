@@ -18,8 +18,8 @@
             @foreach ($images as $image)
                 <a href="{{ route('images.show', $image) }}" class="group block transition sm:rounded-lg hover:opacity-70">
                     <x-card.card class="h-full overflow-hidden">
-                        <div class="pb-2">
-                            <img src="/{{ $image->getFilePath() }}" alt="{{ $image->id }}" height="{{ $image->height }}" class="h-full object-cover transform group-hover:scale-110 transition ease-in-out" loading="lazy"/>
+                        <div>
+                            <img src="{{ $image->getFilePath() }}" alt="{{ $image->id }}" height="{{ $image->height }}" class="h-full object-cover transform group-hover:scale-110 transition ease-in-out" loading="lazy"/>
                         </div>
                     </x-card.card>
                 </a>

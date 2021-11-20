@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use ImageManager;
+use Intervention\Image\Exception\NotReadableException;
 use Storage;
 
 /**
@@ -71,13 +73,42 @@ class Image extends Model
      */
     protected $perPage = 24;
 
-    public function getFileName()
+    public function getFileName(): string
     {
         return "{$this->id}.{$this->file_extension}";
     }
 
-    public function getFilePath()
+    public function getFilePath(): string
     {
         return Storage::disk('vk')->url($this->getFileName());
+    }
+
+    public function getImageFromStorage(): ?\Intervention\Image\Image
+    {
+        if (!$this->mimetype) {
+            return null;
+        }
+
+        try {
+            return ImageManager::make(Storage::disk('vk')->path($this->getFileName()));
+        } catch (NotReadableException $e) {
+            return null;
+        }
+    }
+
+    public function getImageDataFromStorage(): ?string
+    {
+        return optional($this->getImageFromStorage(), function ($data) {
+            return $data->psrResponse()->getBody()->getContents();
+        });
+    }
+
+    public function getMimetypeFromStorage(): ?string
+    {
+        if (Storage::disk('vk')->exists($this->getFileName())) {
+            return Storage::disk('vk')->mimeType($this->getFileName());
+        }
+
+        return null;
     }
 }

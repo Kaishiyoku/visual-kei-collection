@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Image;
 use App\Http\Requests\StoreImageRequest;
 use App\Http\Requests\UpdateImageRequest;
+use App\Models\Image;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
+use ImgFing;
 
 class ImageController extends Controller
 {
@@ -121,12 +122,10 @@ class ImageController extends Controller
 
         $imageFile->storeAs('vk', "{$image->id}.{$fileExtension}");
 
-        $imgFing = imgFing();
+        $imageData = $image->getImageDataFromStorage();
 
-        $imageData = getImageDataFromStorage($image);
-
-        $image->identifier = $imgFing->identifyString($imageData);
-        $image->identifier_image = $imgFing->createIdentityImageFromString($imageData);
+        $image->identifier = ImgFing::identifyString($imageData);
+        $image->identifier_image = ImgFing::createIdentityImageFromString($imageData);
         $image->save();
 
         return $image;
@@ -134,7 +133,7 @@ class ImageController extends Controller
 
     public static function deleteImage(Image $image)
     {
-        Storage::disk('local')->delete($image->getFilePath());
+        Storage::disk('vk')->delete($image->getFileName());
 
         $image->delete();
     }
