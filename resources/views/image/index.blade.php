@@ -17,7 +17,7 @@
         <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             @foreach ($images as $image)
                 <a href="{{ route('images.show', $image) }}" class="group block w-full h-[250px] transition sm:rounded-lg hover:opacity-70">
-                    <x-card.card class="h-full overflow-hidden bg-cover transform hover:scale-110 transition ease-in-out" style="background-image: url('{{ $image->getThumbnailFilePath() }}')">
+                    <x-card.card class="h-full overflow-hidden bg-cover transform hover:scale-105 transition ease-in-out" style="background-image: url('{{ $image->getThumbnailFilePath() }}')">
                         @if ($image->artists->isNotEmpty())
                             <x-card.body class="absolute bottom-0">
                                 @include('image._artists')
