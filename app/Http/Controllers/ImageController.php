@@ -164,6 +164,7 @@ class ImageController extends Controller
         PossibleDuplicateController::deletePossibleDuplicatesForImage($image);
 
         Storage::disk('vk')->delete($image->getFileName());
+        Storage::disk('vk')->delete("thumbnails/{$image->getThumbnailFileName()}");
 
         $image->delete();
     }
