@@ -25,7 +25,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command(CheckForDuplicateImages::class)->dailyAt('04:00');
+        $schedule->command(CheckForDuplicateImages::class)->twiceDailyAt('03:00', '15:00');
     }
 
     /**
