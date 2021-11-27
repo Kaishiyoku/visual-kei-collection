@@ -9,7 +9,6 @@ use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
-use ImageManager;
 use ImgFing;
 use Intervention\Image\Constraint;
 

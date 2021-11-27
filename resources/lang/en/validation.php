@@ -157,6 +157,7 @@ return [
         'source' => 'Source',
         'image' => 'Image',
         'artists' => 'Artists',
+        'name' => 'Name',
     ],
 
 ];

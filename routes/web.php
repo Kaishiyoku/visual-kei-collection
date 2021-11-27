@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PossibleDuplicateController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     // admin routes
     Route::group(['middleware' => ['administrate']], function () {
         Route::resource('images', ImageController::class);
+        Route::resource('artists', ArtistController::class)->except(['show']);
 
         Route::put('/possible_duplicates/{possibleDuplicate}/ignore', [PossibleDuplicateController::class, 'ignore'])->name('possible_duplicates.ignore');
         Route::put('/possible_duplicates/{possibleDuplicate}/{image}', [PossibleDuplicateController::class, 'keepImage'])->name('possible_duplicates.keep_image');
