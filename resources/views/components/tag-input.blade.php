@@ -1,4 +1,4 @@
-@props(['name' => null, 'value' => [], 'autocompleteValues' => []])
+@props(['name' => null, 'value' => [], 'autocompleteValues' => [], 'minChars' => 3])
 
 <div x-data="tagInput()" class="mt-1">
     <template x-for="tag in tags">
@@ -29,7 +29,7 @@
 
     <div
         x-cloak
-        x-show="isFocused"
+        x-show="isDropdownVisible()"
         @click.stop=""
         x-transition:enter="transition ease-out duration-200"
         x-transition:enter-start="transform opacity-0 scale-95"
@@ -40,7 +40,7 @@
         class="absolute z-50 mr-4 mt-2 rounded-md shadow-lg origin-top-right"
     >
         <div class="rounded-md ring-1 ring-black ring-opacity-5 py-1 bg-white overflow-y-auto max-h-[200px] md:min-w-[350px] md:max-w-[800px] dark:bg-gray-800 dark:border-gray-600 dark:focus:border-indigo-500 dark:focus:ring-indigo-500">
-            <div x-show="filteredAutocompleteValues().length === 0" class="w-full px-4 py-2 text-sm leading-5 text-gray-700">
+            <div x-show="len(filteredAutocompleteValues()) === 0" class="w-full px-4 py-2 text-sm leading-5 text-gray-700">
                 {{ __('No entries found.') }}
             </div>
 
@@ -60,33 +60,30 @@
 </div>
 
 <script type="text/javascript">
-    const autocompleteValues = [];
-
-    @foreach ($autocompleteValues as $autocompleteValue)
-    autocompleteValues.push({label: '{{ $autocompleteValue['label'] }}', description: '{{ $autocompleteValue['description'] }}'});
-    @endforeach
-
-    const tagValues = [];
-
-    @foreach ($value as $tag)
-    tagValues.push('{{ $tag }}');
-    @endforeach
+    const autocompleteValues = @json($autocompleteValues);
 
     function tagInput() {
         return {
-            tags: tagValues,
+            tags: @json($value),
             newTag: '',
             isFocused: false,
+            minChars: {{ $minChars }},
+            getNewTag() {
+                return this.newTag.trim();
+            },
+            isDropdownVisible() {
+                return len(this.getNewTag()) >= this.minChars;
+            },
             addTag() {
-                if (this.newTag.trim() !== '' && !this.tags.includes(this.newTag.trim())) {
-                    this.tags.push(this.newTag.trim());
+                if (this.getNewTag() !== '' && !this.tags.includes(this.getNewTag())) {
+                    this.tags.push(this.getNewTag());
                     this.newTag = '';
                 }
             },
             addTagOrFromDropdown() {
                 const filteredAutocompleteValues = this.filteredAutocompleteValues();
 
-                if (filteredAutocompleteValues.length === 1) {
+                if (len(filteredAutocompleteValues) === 1) {
                     const [firstAutocompleteValue] = filteredAutocompleteValues;
 
                     this.newTag = firstAutocompleteValue.label;
@@ -95,7 +92,7 @@
                 this.addTag();
             },
             removeTag() {
-                if (this.newTag.trim() === '') {
+                if (this.getNewTag() === '') {
                     this.tags.pop();
                 }
             },
@@ -111,10 +108,14 @@
                 this.$refs.input.focus();
             },
             filteredAutocompleteValues() {
+                if (!this.isDropdownVisible()) {
+                    return [];
+                }
+
                 return autocompleteValues.filter((item) => {
                     const isTagIncluded = this.isTagIncluded(item.label);
-                    const labelContainsStr = item.label.toLowerCase().includes(this.newTag.trim().toLowerCase());
-                    const descriptionContainsStr = item.description.toLowerCase().includes(this.newTag.trim().toLowerCase());
+                    const labelContainsStr = strIncludes(item.label, this.getNewTag());
+                    const descriptionContainsStr = strIncludes(item.description, this.getNewTag());
 
                     return !isTagIncluded && (labelContainsStr || descriptionContainsStr);
                 });

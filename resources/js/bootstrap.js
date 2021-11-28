@@ -27,6 +27,14 @@ import onDomReady from './utils/onDomReady';
 //     forceTLS: true
 // });
 
+const strToLower = (str) => str ? str.toLowerCase() : str;
+const strIncludes = (str, search) => str ? strToLower(str).includes(strToLower(search)) : str;
+const len = (str) => str ? str.length : str;
+
+window.strToLower = strToLower;
+window.strIncludes = strIncludes;
+window.len = len;
+
 onDomReady(() => {
     document.querySelectorAll('[data-confirm]').forEach((element) => {
         element.addEventListener('click', (event) => {
